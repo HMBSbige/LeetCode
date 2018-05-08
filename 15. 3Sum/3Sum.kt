@@ -13,17 +13,17 @@ class Solution
 			val m = mutableSetOf<Int>()
 			for(x in nums.slice(index + 1 until nums.size))
 			{
-				if(!m.contains(x))
+				if(!m.contains(value.inv() + 1 - x))
 				{
-					m.add(value.inv() + 1 - x)
+					m.add(x)
 				}
 				else
 				{
-					ans.add(listOf(value, -value - x, x))
+					ans.add(listOf(value, value.inv() + 1 - x, x))
 				}
 			}
 		}
 		return ans.toList()
 	}
 }
-//Runtime: 1288 ms
+//Runtime: 1324 ms
